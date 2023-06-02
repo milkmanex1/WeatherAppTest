@@ -5,7 +5,7 @@ const containerVariants = {
   hidden: {
     opacity: 0,
     // y: "-30vh",
-    x: "-30vw",
+    x: "-20vw",
   },
   visible: {
     opacity: 1,
@@ -36,7 +36,7 @@ const History = ({ history, getInfo, removeHistory }) => {
     <div
       className={`flex ${
         history.length ? "flex-col-reverse" : "flex-col items-center"
-      } gap-y-2 py-2 text-sm md:text-md h-[40vh] overflow-y-auto scrollbar `}
+      } gap-y-2 py-2 text-xs md:text-base max-h-[40vh] overflow-y-auto scrollbar overflow-x-hidden`}
     >
       <AnimatePresence>
         {history.length ? (
@@ -44,7 +44,7 @@ const History = ({ history, getInfo, removeHistory }) => {
             return (
               <motion.div
                 key={index}
-                className="bg-white bg-opacity-30 p-4 rounded-2xl flex flex-row gap-x-2"
+                className="bg-white bg-opacity-30 px-4 py-2 md:p-4 rounded-2xl flex flex-row gap-x-2"
                 variants={containerVariants}
                 initial="hidden"
                 animate="visible"
@@ -57,7 +57,7 @@ const History = ({ history, getInfo, removeHistory }) => {
                       {item.city}, {item.country}
                     </span>
                   </p>
-                  <p className="text-slate-600 text-xs md:text-md grid items-center">
+                  <p className="text-slate-600 text-xs md:text-base grid items-center">
                     <span>{item.time}</span>
                   </p>
                 </div>

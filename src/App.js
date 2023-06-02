@@ -3,7 +3,7 @@ import Search from "./components/Search";
 import Display from "./components/Display";
 import Error from "./components/Error";
 import History from "./components/History";
-//test
+
 function getLocalHistory() {
   let localHistory = localStorage.getItem("history");
   if (localHistory) {
@@ -115,29 +115,13 @@ function App() {
         {/*------------ main container ------------*/}
         <div className="w-full py-4 px-4 md:px-10  h-full lg:h-auto bg-white bg-opacity-25 backdrop-blur rounded-2xl ">
           <div className="w-full relative">
-            {/*-------------- cloud/sun image------------ */}
-            {showImg &&
-              (isRaining ? (
-                <img
-                  className="absolute h-28 -top-12 -right-4 md:-top-16 md:-right-8 md:h-64 "
-                  src="assets/cloud.png"
-                  alt=""
-                />
-              ) : (
-                <img
-                  className="absolute h-28 -top-12 -right-4 md:-top-16 md:-right-8 md:h-64 "
-                  src="assets/sun.png"
-                  alt=""
-                />
-              ))}
             {/* ------------------display forecast----------------*/}
             {forecast && !error ? (
-              <Display {...{ forecast }}></Display>
+              <Display {...{ forecast, showImg, isRaining }}></Display>
             ) : (
               error && <Error></Error>
             )}
             {/* -----------------Search History ------------------*/}
-
             <h1 className="md:text-lg font-bold mt-4 mb-2">Search History</h1>
             <History {...{ history, getInfo, removeHistory }}></History>
           </div>
