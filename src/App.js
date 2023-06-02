@@ -74,7 +74,7 @@ function App() {
   }, [forecast]);
   //get weather info from api
   async function getInfo(city, country, newSearch) {
-    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=6db0dcd5883f077a00ee33fa5cbd8371`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=07bb232c154725b36b2e9d92e17d10ac`;
     const response = await fetch(url);
 
     if (response.status !== 200) {
