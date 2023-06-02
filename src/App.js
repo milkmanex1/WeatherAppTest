@@ -3,6 +3,7 @@ import Search from "./components/Search";
 import Display from "./components/Display";
 import Error from "./components/Error";
 import History from "./components/History";
+//test
 function getLocalHistory() {
   let localHistory = localStorage.getItem("history");
   if (localHistory) {
